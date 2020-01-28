@@ -43,10 +43,14 @@ Turbulence is a highly complex phenomenon in fluid dynamics involving nonlinear 
 
 # Mathematics
 
-Let $\mathbf{u}$ and $\theta$ be velocity and scalar fields respectively. For any two points $\mathbf{r}$ and $\mathbf{r+l}$, we can define the velocity differential to be $\delta \mathbf{u} = \mathbf{u(r+l)}-\mathbf{u(r)}$. Further, we denote $\delta u_\parallel=\delta \mathbf{u}\cdot \hat{\mathbf{l}} $ as the component of the velocity differential along the vector $\mathbf{l}$, and $\delta u_\perp= \delta \mathbf{u} - \delta u_\parallel \hat{\mathbf{l}}$ as the component of the velocity differential perpendicular to $\mathbf{l}$. The longitudinal velocity structure functions of order $q$ are defined as
-$$ S_q^{u_\parallel} = \langle \delta u_\parallel^q \rangle,$$ and the transverse velocity structure functions order $q$ are defined as $$ S_q^{u_\perp} = \langle \delta u_\perp^q \rangle. $$ 
+Let $\mathbf{u}$ and $\theta$ be velocity and scalar fields respectively. For any two points $\mathbf{r}$ and $\mathbf{r+l}$, we can define the velocity differential to be $\delta \mathbf{u} = \mathbf{u(r+l)}-\mathbf{u(r)}$. Further, we denote $\delta u_\parallel=\delta \mathbf{u}\cdot \hat{\mathbf{l}}$ as the component of the velocity differential along the vector $\mathbf{l}$, and $\delta u_\perp= \delta \mathbf{u} - \delta u_\parallel \hat{\mathbf{l}}$ as the component of the velocity differential perpendicular to $\mathbf{l}$. The longitudinal velocity structure functions of order $q$ are defined as
+$$ S_q^{u_\parallel} = \langle \delta u_\parallel^q \rangle,$$ 
+and the transverse velocity structure functions order 
+$q$ are defined as 
+$$ S_q^{u_\perp} = \langle \delta u_\perp^q \rangle. $$ 
 
-Similarly, we can define the scalar differential to be $\delta \theta = \theta (\mathbf{r+l}) - \theta(\mathbf{r})$, and the scalar structure functions as $$ S_q^\theta = \langle \delta \theta^q\rangle. $$
+Similarly, we can define the scalar differential to be $\delta \theta = \theta (\mathbf{r+l}) - \theta(\mathbf{r})$, and the scalar structure functions as 
+$$ S_q^\theta = \langle \delta \theta^q\rangle. $$
 For homogeneous turbulence, the $\mathbf{r}$ dependence vanishes and the aforementioned quantities become functions of $\mathbf{l}$ alone. If the turbulence is isotropic in addition to being homogeneous, the structure functions become functions of $l$, where $l=|\mathbf{l}|$. Note that second order velocity structure functions provide an estimate of energy in all the eddies of size $l$ or less [@Davidson:book:Turbulence]. 
 
 # Design of the Code
