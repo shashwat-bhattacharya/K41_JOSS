@@ -9,13 +9,13 @@ tags:
 
 authors:
   - name: Shubhadeep Sadhukhan
-    orcid: 0000-0001-1275-0091
+    orcid: 0000-0002-7278-5041
     affiliation: 1
   - name: Shashwat Bhattacharya
-    orcid: 0000-0002-1280-9881
+    orcid: 0000-0001-7462-7680
     affiliation: 2
   - name: Mahendra K. Verma
-    orcid: 0000-0001-7462-7680
+    orcid: 0000-0002-3380-4561
     affiliation: 1
   
 
