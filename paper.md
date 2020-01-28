@@ -62,10 +62,12 @@ For homogeneous turbulence, the $\mathbf{r}$ dependence vanishes and the aforeme
 Using the properties of dot product, it can be shown that for longitudinal velocity structure functions, $S_q^{u_\parallel}(\mathbf{l})= S_q^{u_\parallel}(\mathbf{-l})$. If the user decides to compute only the longitudinal velocity structure functions, `Kolmogorov41` exploits the aforementioned property by not separately evaluating $S_q^{u_\parallel}(\mathbf{-l})$. This results in saving significant computational costs.    
 
  
-#Results
+# Results
+
 We validate our code by using it to compute the structure functions for specific cases, and then comparing our results with those obtained analytically.
 
-###Problem 1
+### Problem 1
+
 We consider the following two-dimensional velocity and scalar fields:
 $$\mathbf{u} = 
 \begin{bmatrix} 
@@ -80,10 +82,11 @@ We run ``Kolmogorov41`` to compute the velocity and scalar structure functions u
 
 This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity field and the scalar field as per the relation given earlier in the section. After computing the structure functions, the code computes the percentage error between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
 
-![Plot of the longitudinal velocity structure functions of 2nd and 3rd orders vs. $l$ for Problem 1. The 2nd and 3rd order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png)
+![Plot of the longitudinal velocity structure functions of 2nd and 3rd orders vs. $l$ for Problem 1. The 2nd and 3rd order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png) { width=40% }
 
 
-###Problem 2
+### Problem 2
+
 Here, we consider the classical problem of three-dimensional homogeneous isotropic turbulence. For such flows, the third-order longitudinal velocity structure functions are given by
 $$S_3^{u_\parallel}(l) = -\frac{4}{5} \epsilon l,$$
 where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure]. In general case, the structure functions of order $q$ scale as $S_q^{u_\parallel}(l) \sim l^{\zeta_q}$, where the exponents $\zeta_q$ fit well with the model of @She:PRL1993.  
