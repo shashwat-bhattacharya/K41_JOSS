@@ -95,7 +95,7 @@ Using ``Kolmogorov41``, we compute the longitudinal velocity structure functions
 
 We plot the third-order velocity structure functions versus $l$ in Figure \ref{Hydro}(a). We observe that in the inertial range ($0.2<l<0.7$), the third-order longitudinal velocity structure functions scale as $\sim l$, consistent with Kolmogorov's theory. We also plot the scaling exponents $\zeta_q$ versus $q$ in Figure \ref{Hydro}(b). The figure clearly shows that the exponents fit well with She-Leveque's model. 
 
-![For 3D homogeneous isotropic turbulence: (a) Plot of $|S_3^u(l)|$ vs. $l$. (b) Plot of $\zeta_q$ vs. $q$. $\zeta_q$ matches with the predictions of She and Leveque (CITEE). \label{Hydro}](Hydro.png)
+
 <img src="Hydro.png" width=500>
 
 The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.  
