@@ -33,15 +33,16 @@ bibliography: paper.bib
 
 # Summary
 
-Turbulence is a highly complex phenomenon in fluid dynamics involving nonlinear interactions between a large number of scales. A popular method to study the state of turbulence is the analysis of velocity and scalar structure functions [@Frisch:book; @Verma:book:ET]. Structure functions diagnostics have been carried out for three-dimensional homogeneous and isotropic turbulence [@Gotoh:PF2002; @Kandeda:PF2003; Ishihara:ARFM2009], passive scalar turbulence [@Yeung:PF2005; @Ray:NJP2008], two-dimensional turb.Structure functions are two-point statistical quantities; thus, an accurate computation of these quantities requires averaging over a large number of points. However, this makes the computations very expensive and challenging. Therefore, an optimised code employing parallel computing is required for accurate computation of structure functions.  
+Turbulence is a highly complex phenomenon in fluid dynamics involving nonlinear interactions between a large number of scales. A popular method to study the state of turbulence is the analysis of velocity and scalar structure functions [@Frisch:book; @Verma:book:ET]. Structure functions diagnostics have been carried out for three-dimensional homogeneous and isotropic turbulence [@Gotoh:PF2002; @Kaneda:PF2003; Ishihara:ARFM2009], passive scalar turbulence [@Yeung:PF2005; @Ray:NJP2008], two-dimensional turbulence [@Biferrale:NJP2004], and turbulent thermal convection [@Kunnen:PRE2008; @Kaczorowski:JFM2013]. Structure functions are two-point statistical quantities; thus, an accurate computation of these quantities requires averaging over a large number of points. However, this makes the computations very expensive and challenging. Therefore, an optimised code employing parallel computing is required for accurate computation of structure functions.  
 
  ``Kolmogorov41`` is a hybrid parallel code written in C++ that computes velocity and scalar structure functions using given velocity or scalar field data. This code is named after the Russian scientist Andre Kolmogorov to honour his famous works on turbulence that were carried out in 1941 [@Kolmogorov:Dissipation; @Kolmogorov:Structure]. ``Kolmogorov41`` employs a combination of distributed (MPI) and shared (OpenMP) memory parallelization [@Pacheco:book:PP]. We remark that the entire data is shared among all the MPI processes; this eliminates the need of communication between the processors. Thus, when a large number of processors are used, we save a lot of time spent on communication between the processors. 
  
  The user can choose whether the scalar or the velocity structure functions are reuqired to be computed. Further, there is a choice of the range of orders of the structure functions to be computed and also whether to use two-dimensional or three-dimensional fields. The fields are fed to the code as HDF5 files. 
- ``Kolmogorov41`` computes and stores the structure functions as functions of $l$, where $l$ is the distance between two points in the computational domains. Additionally, as per the choice of the user, the code also stores the structure functions as functions of the displacement vector $\mathbf{l}$. The latter form is useful for studying anisotropic turbulence such as stably stratified flows and rotating flows.  
+ ``Kolmogorov41`` computes and stores the structure functions as functions of $l$, where $l$ is the distance between two points in the computational domains. Additionally, as per the choice of the user, the code also stores the structure functions as functions of the displacement vector $\mathbf{l}$. The latter form is useful for studying anisotropic turbulence such as stably stratified flows and rotating flows. We remark that our code has been used by @Bhattacharya:PF2019 for analysing the longitudinal velocity structure functions of turbulent thermal convection.
 
+In the next section, we will briefly explain the velocity and the scalar structure functions of turbulent flows.
 
-# Mathematics
+# Velocity and scalar structure functions
 
 Let $\mathbf{u}$ and $\theta$ be velocity and scalar fields respectively. For any two points $\mathbf{r}$ and $\mathbf{r+l}$, we can define the velocity differential to be $\delta \mathbf{u} = \mathbf{u(r+l)}-\mathbf{u(r)}$. Further, we denote $\delta u_\parallel=\delta \mathbf{u}\cdot \hat{\mathbf{l}}$ as the component of the velocity differential along the vector $\mathbf{l}$, and $\delta u_\perp= \delta \mathbf{u} - \delta u_\parallel \hat{\mathbf{l}}$ as the component of the velocity differential perpendicular to $\mathbf{l}$. The longitudinal velocity structure functions of order $q$ are defined as
 $$ S_q^{u_\parallel} = \langle \delta u_\parallel^q \rangle,$$ 
@@ -95,8 +96,7 @@ Using ``Kolmogorov41``, we compute the longitudinal velocity structure functions
 
 We plot the third-order velocity structure functions versus $l$ in Figure \ref{Hydro}(a). We observe that in the inertial range ($0.2<l<0.7$), the third-order longitudinal velocity structure functions scale as $\sim l$, consistent with Kolmogorov's theory. We also plot the scaling exponents $\zeta_q$ versus $q$ in Figure \ref{Hydro}(b). The figure clearly shows that the exponents fit well with She-Leveque's model. 
 
-
-<img src="Hydro.png" width=500>
+![For 3D homogeneous isotropic turbulence: (a) Plot of $|S_3^u(l)|$ vs. $l$. (b) Plot of $\zeta_q$ vs. $q$. $\zeta_q$ matches with the predictions of She and Leveque (CITEE). \label{Hydro}](Hydro.png)
 
 The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.  
 
