@@ -33,7 +33,7 @@ bibliography: paper.bib
 
 # Summary
 
-Turbulence is a highly complex phenomenon in fluid dynamics involving nonlinear interactions between a large number of scales. Structure function is a popular diagnostics tool that is often used to quantify the state of turbulence [@Frisch:book; @Verma:book:ET].  Structure functions are two-point statistical quantities; thus, an accurate computation of these quantities requires averaging over a large number of points. However, this makes the computations very expensive and challenging. Therefore, an optimised code employing parallel computing is required for accurate computation of structure functions.  
+Turbulence is a highly complex phenomenon in fluid dynamics involving nonlinear interactions between a large number of scales. A popular method to study the state of turbulence is the analysis of velocity and scalar structure functions [@Frisch:book; @Verma:book:ET]. Structure functions diagnostics have been carried out for three-dimensional homogeneous and isotropic turbulence [@Gotoh:PF2002; @Kandeda:PF2003; Ishihara:ARFM2009], passive scalar turbulence [@Yeung:PF2005; @Ray:NJP2008], two-dimensional turb.Structure functions are two-point statistical quantities; thus, an accurate computation of these quantities requires averaging over a large number of points. However, this makes the computations very expensive and challenging. Therefore, an optimised code employing parallel computing is required for accurate computation of structure functions.  
 
  ``Kolmogorov41`` is a hybrid parallel code written in C++ that computes velocity and scalar structure functions using given velocity or scalar field data. This code is named after the Russian scientist Andre Kolmogorov to honour his famous works on turbulence that were carried out in 1941 [@Kolmogorov:Dissipation; @Kolmogorov:Structure]. ``Kolmogorov41`` employs a combination of distributed (MPI) and shared (OpenMP) memory parallelization [@Pacheco:book:PP]. We remark that the entire data is shared among all the MPI processes; this eliminates the need of communication between the processors. Thus, when a large number of processors are used, we save a lot of time spent on communication between the processors. 
  
@@ -82,7 +82,7 @@ We run ``Kolmogorov41`` to compute the velocity and scalar structure functions u
 
 This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity field and the scalar field as per the relation given earlier in the section. After computing the structure functions, the code computes the percentage error between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
 
-![Plot of the longitudinal velocity structure functions of 2nd and 3rd orders vs. $l$ for Problem 1. The 2nd and 3rd order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png) { width=40% }
+![Plot of the longitudinal velocity structure functions of 2nd and 3rd orders vs. $l$ for Problem 1. The 2nd and 3rd order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png)
 
 
 ### Problem 2
@@ -96,6 +96,7 @@ Using ``Kolmogorov41``, we compute the longitudinal velocity structure functions
 We plot the third-order velocity structure functions versus $l$ in Figure \ref{Hydro}(a). We observe that in the inertial range ($0.2<l<0.7$), the third-order longitudinal velocity structure functions scale as $\sim l$, consistent with Kolmogorov's theory. We also plot the scaling exponents $\zeta_q$ versus $q$ in Figure \ref{Hydro}(b). The figure clearly shows that the exponents fit well with She-Leveque's model. 
 
 ![For 3D homogeneous isotropic turbulence: (a) Plot of $|S_3^u(l)|$ vs. $l$. (b) Plot of $\zeta_q$ vs. $q$. $\zeta_q$ matches with the predictions of She and Leveque (CITEE). \label{Hydro}](Hydro.png)
+<img src="Hydro.png" width=500>
 
 The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.  
 
