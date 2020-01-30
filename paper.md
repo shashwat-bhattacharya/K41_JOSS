@@ -95,13 +95,14 @@ This problem is used as a test case for the validation of the code. The user is 
 
 ### Problem 2
 
-Here, we consider the classical problem of three-dimensional incompressible homogeneous isotropic turbulence. For such flows, we consider the inertial range, which comprises of scales lying between the large-scale forcing regime and the small-scale dissipation regime. In this range, the third-order longitudinal velocity structure functions are given by
+Here, we consider the classical problem of three-dimensional incompressible homogeneous isotropic turbulence. For such flows, we consider the inertial range, which comprises of scales lying between the large-scale forcing regime and the small-scale dissipation regime. In this range, the third-order longitudinal velocity structure function is given by
 $$S_3^{u_\parallel}(l) = -\frac{4}{5} \epsilon l,$$
-where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure]. In general case, the structure functions of order $q$ scale as $S_q^{u_\parallel}(l) \sim l^{\zeta_q}$ in the inertial range, where the exponents $\zeta_q$ fit well with the model of @She:PRL1994.  
+where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure].
 
-Using ``Kolmogorov41``, we compute the longitudinal velocity structure functions using the simulation data of three-dimensional homogeneous isotropic turbulence with Reynolds number (Re) of 5700. The simulation was performed using TARANG [@Chatterjee:JPDC2018] on a $512^3$ grid. The domain size was taken as ($2\pi \times 2\pi \times 2\pi$). 
+Using ``Kolmogorov41``, we compute the longitudinal velocity structure functions using the simulation data of three-dimensional homogeneous isotropic turbulence with Reynolds number (Re) of 5700 [@Sadhukhan:PRF2019]. The simulation was performed using TARANG [@Chatterjee:JPDC2018] on a $512^3$ grid. The domain size was taken as ($2\pi \times 2\pi \times 2\pi$). 
 
-We plot the third-order velocity structure functions versus $l$ in Figure \ref{Hydro}(a). We observe that in the inertial range ($0.2<l<0.7$), the third-order longitudinal velocity structure functions scale as $\sim l$, consistent with Kolmogorov's theory. We also plot the scaling exponents $\zeta_q$ versus $q$ in Figure \ref{Hydro}(b). The figure clearly shows that the exponents fit well with She-Leveque's model. 
+We normalize the negative of third-order longitudinal velocity structure function with $\epsilon l$ and plot this quantity versus $l$ in   
+Figure \ref{Hydro}. The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Note that we can get more accurate results from higher-resolution simulations [@Verma:Pramana2013]. 
 
 ![For 3D homogeneous isotropic turbulence: (a) Plot of $|S_3^u(l)|$ vs. $l$. (b) Plot of $\zeta_q$ vs. $q$. $\zeta_q$ matches with the predictions of @She:PRL1994. \label{Hydro}](SF_hydro.png)
 
