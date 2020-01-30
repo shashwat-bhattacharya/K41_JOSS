@@ -60,7 +60,7 @@ In the next section, we provide a brief description of the design of the code.
 
 Additionally, as per the choice of the user, `Kolmogorov41` can also compute and store the structure functions as functions of the displacement vector $\mathbf{l}$. This form is useful for anisotropic turbulence such as rotating or stably-stratified flows.
 
-Using the properties of dot product, it can be shown that for longitudinal velocity structure functions, $S_q^{u_\parallel}(\mathbf{l})= S_q^{u_\parallel}(\mathbf{-l})$. If the user decides to compute only the longitudinal velocity structure functions, `Kolmogorov41` exploits the aforementioned property by not separately evaluating $S_q^{u_\parallel}(\mathbf{-l})$. This results in saving significant computational costs.
+Using the definition of the longitudinal structure functions, it can be shown that $S_q^{u_\parallel}(\mathbf{l})= S_q^{u_\parallel}(\mathbf{-l})$. If the user decides to compute only the longitudinal velocity structure functions, `Kolmogorov41` exploits the aforementioned property by not separately evaluating $S_q^{u_\parallel}(\mathbf{-l})$. This results in saving significant computational costs.
 
 We use a combination of MPI and OpenMP to parallelize our code.  The interval of the outermost "for" loop described earlier in this section is divided among MPI processors. Using OpenMP threads, we parallelize the second "for" loop. Note that the entire data is accessible to all the MPI processors, thereby eliminating the need of communication between the processsors. This hybrid parallelization allows us to use a maximum of $N_x \times p$ processors, where $N_x$ is the number of grid points along $x$ direction and $p$ is either the number of processors per computation node or the number of grid points along $y$ direction (or $z$ direction for 2D fields), depending on whichever is less.  
 
@@ -101,10 +101,9 @@ where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolm
 
 Using ``Kolmogorov41``, we compute the longitudinal velocity structure functions using the simulation data of three-dimensional homogeneous isotropic turbulence with Reynolds number (Re) of 5700 [@Sadhukhan:PRF2019]. The simulation was performed using TARANG [@Chatterjee:JPDC2018] on a $512^3$ grid. The domain size was taken as ($2\pi \times 2\pi \times 2\pi$). 
 
-We normalize the negative of third-order longitudinal velocity structure function with $\epsilon l$ and plot this quantity versus $l$ in   
-Figure \ref{Hydro}. The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Note that we can get more accurate results from higher-resolution simulations [@Verma:Pramana2013tarang]. 
+We normalize the negative of third-order longitudinal velocity structure function with $\epsilon l$ and plot this quantity versus $l$ in Figure \ref{Hydro}. The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Note that we can get more accurate results from higher-resolution simulations [@Verma:Pramana2013tarang]. 
 
-![For 3D homogeneous isotropic turbulence: plot of normalized third-order structure function vs. $l$. The normalized structure function is close to $4/5$ in the inertial range.](SF_hydro.png)
+![For 3D homogeneous isotropic turbulence: plot of normalized third-order structure function vs. $l$. The normalized structure function is close to $4/5$ in the inertial range. \label{Hydro}](SF_hydro.png)
 
 The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.  
 
