@@ -104,7 +104,7 @@ Using ``Kolmogorov41``, we compute the longitudinal velocity structure functions
 We normalize the negative of third-order longitudinal velocity structure function with $\epsilon l$ and plot this quantity versus $l$ in   
 Figure \ref{Hydro}. The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Note that we can get more accurate results from higher-resolution simulations [@Verma:Pramana2013tarang]. 
 
-![For 3D homogeneous isotropic turbulence: (a) Plot of $|S_3^u(l)|$ vs. $l$. (b) Plot of $\zeta_q$ vs. $q$. $\zeta_q$ matches with the predictions of @She:PRL1994. \label{Hydro}](SF_hydro.png)
+![For 3D homogeneous isotropic turbulence: plot of normalized third-order structure function vs. $l$. The normalized structure function is close to $4/5$ in the inertial range.](SF_hydro.png)
 
 The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.  
 
