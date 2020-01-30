@@ -102,7 +102,7 @@ where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolm
 Using ``Kolmogorov41``, we compute the longitudinal velocity structure functions using the simulation data of three-dimensional homogeneous isotropic turbulence with Reynolds number (Re) of 5700 [@Sadhukhan:PRF2019]. The simulation was performed using TARANG [@Chatterjee:JPDC2018] on a $512^3$ grid. The domain size was taken as ($2\pi \times 2\pi \times 2\pi$). 
 
 We normalize the negative of third-order longitudinal velocity structure function with $\epsilon l$ and plot this quantity versus $l$ in   
-Figure \ref{Hydro}. The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Note that we can get more accurate results from higher-resolution simulations [@Verma:Pramana2013]. 
+Figure \ref{Hydro}. The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Note that we can get more accurate results from higher-resolution simulations [@Verma:Pramana2013tarang]. 
 
 ![For 3D homogeneous isotropic turbulence: (a) Plot of $|S_3^u(l)|$ vs. $l$. (b) Plot of $\zeta_q$ vs. $q$. $\zeta_q$ matches with the predictions of @She:PRL1994. \label{Hydro}](SF_hydro.png)
 
