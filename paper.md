@@ -44,7 +44,7 @@ In the next section, we will briefly define the velocity and the scalar structur
 
 # Velocity and scalar structure functions
 
-Let $\mathbf{u}$ and $\theta$ be velocity and scalar fields respectively. For any two points $\mathbf{r}$ and $\mathbf{r+l}$, we can define the velocity differential to be $\delta \mathbf{u} = \mathbf{u(r+l)}-\mathbf{u(r)}$. Further, we denote $\delta u_\parallel=\delta \mathbf{u}\cdot \hat{\mathbf{l}}$ as the component of the velocity differential along the vector $\mathbf{l}$, and $\delta u_\perp= \delta \mathbf{u} - \delta u_\parallel \hat{\mathbf{l}}$ as the component of the velocity differential perpendicular to $\mathbf{l}$. The longitudinal velocity structure functions of order $q$ are defined as
+Let $\mathbf{u}$ and $\theta$ be velocity and scalar fields respectively. For any two points $\mathbf{r}$ and $\mathbf{r+l}$, we can define the velocity differential to be $\delta \mathbf{u} = \mathbf{u(r+l)}-\mathbf{u(r)}$. Further, we denote $\delta u_\parallel=\delta \mathbf{u}\cdot \hat{\mathbf{l}}$ as the component of the velocity differential along the vector $\mathbf{l}$, and $\delta u_\perp= |\delta \mathbf{u} - \delta u_\parallel \hat{\mathbf{l}}|$ as the component of the velocity differential perpendicular to $\mathbf{l}$. The longitudinal velocity structure functions of order $q$ are defined as
 $$ S_q^{u_\parallel} = \langle \delta u_\parallel^q \rangle,$$ 
 and the transverse velocity structure functions order 
 $q$ are defined as 
@@ -88,9 +88,10 @@ In Figure \ref{SFTest}, we plot the second and the third-order longitudinal velo
 
 ![Plots of the longitudinal velocity structure functions of 2nd and 3rd orders vs. $l$ for Problem 1. The 2nd and 3rd order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png)
 
+This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity and the scalar fields as per the given relation. After computing the structure functions, the code computes the percentage error between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
+
 ![Left: Density plot of the second-order scalar structure functions as function of the displacement vector for Problem 1. Right: Density plot of $(l_x+l_z)^2$, which is the analytical value of the second order structure functions for the scalar field defined for Problem 1. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
 
-This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity and the scalar fields as per the given relation. After computing the structure functions, the code computes the percentage error between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
 
 ### Problem 2
 
