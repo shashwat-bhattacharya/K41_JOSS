@@ -59,9 +59,9 @@ In the next section, we provide a brief description of the design of the code.
 
 `Kolmogorov41` employs six nested "for" loops for computation of structure functions using three-dimensional fields. The outer three loops describe the position vector $\mathbf{r}=(x_1,y_1,z_1)$, and the inner three describing the position vector $\mathbf{r+l}=(x_2,y_2,z_2)$. For two-dimensional fields, the code employs four nested "for" loops, with the outer two describing $\mathbf{r}=(x_1,z_1)$ and the inner two describing $\mathbf{r+l}=(x_2,z_2)$. For both the cases, the interval of the outermost "for" loop is divided among MPI processors. Using OpenMP threads, we parallelize the second "for" loop. In the innermost loop, the code computes $(\delta u_\parallel)^q$ and / or $(\delta u_\perp)^q$ for the velocity structure functions, or $(\delta \theta)^q$ for the scalar structure functions. For every $l$, the values of $(\delta u_\parallel)^q$, $(\delta u_\perp)^q$, or $(\delta \theta)^q$ are averaged over the entire domain. 
 
-Using the properties of dot product, it can be shown that for longitudinal velocity structure functions, $S_q^{u_\parallel}(\mathbf{l})= S_q^{u_\parallel}(\mathbf{-l})$. If the user decides to compute only the longitudinal velocity structure functions, `Kolmogorov41` exploits the aforementioned property by not separately evaluating $S_q^{u_\parallel}(\mathbf{-l})$. This results in saving significant computational costs. 
-
 Additionally, as per the choice of the user, `Kolmogorov41` can also compute and store the structure functions as functions of the displacement vector $\mathbf{l}$. This form is useful for anisotropic turbulence such as rotating or stably-stratified flows.
+
+Using the properties of dot product, it can be shown that for longitudinal velocity structure functions, $S_q^{u_\parallel}(\mathbf{l})= S_q^{u_\parallel}(\mathbf{-l})$. If the user decides to compute only the longitudinal velocity structure functions, `Kolmogorov41` exploits the aforementioned property by not separately evaluating $S_q^{u_\parallel}(\mathbf{-l})$. This results in saving significant computational costs. 
 
 In the next section, we discuss the validation of our code.
  
