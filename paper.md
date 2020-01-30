@@ -61,7 +61,7 @@ In the next section, we provide a brief description of the design of the code.
 
 Using the properties of dot product, it can be shown that for longitudinal velocity structure functions, $S_q^{u_\parallel}(\mathbf{l})= S_q^{u_\parallel}(\mathbf{-l})$. If the user decides to compute only the longitudinal velocity structure functions, `Kolmogorov41` exploits the aforementioned property by not separately evaluating $S_q^{u_\parallel}(\mathbf{-l})$. This results in saving significant computational costs. 
 
-Additionally, as per the choice of the user, `Kolmogorov41` can also compute and store the structure functions as functions of the displacement vector $l$. This form is useful for anisotropic turbulence such as rotating or stably-stratified flows.
+Additionally, as per the choice of the user, `Kolmogorov41` can also compute and store the structure functions as functions of the displacement vector $\mathbf{l}$. This form is useful for anisotropic turbulence such as rotating or stably-stratified flows.
 
 In the next section, we discuss the validation of our code.
  
