@@ -97,10 +97,10 @@ Here, we consider the classical problem of three-dimensional incompressible homo
 $$S_3^{u_\parallel}(l) = -\frac{4}{5} \epsilon l,$$
 where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure].
 
+![For 3D homogeneous isotropic turbulence: plot of normalized third-order structure function vs. $l$. The normalized structure function is close to $4/5$ in the inertial range. \label{Hydro}](SF_hydro.png)
+
 Using ``Kolmogorov41``, we compute the longitudinal third-order velocity structure function using the simulation data of three-dimensional homogeneous isotropic turbulence with Reynolds number (Re) of 5700 [@Sadhukhan:PRF2019]. The simulation was performed using TARANG [@Chatterjee:JPDC2018] on a $512^3$ grid with the domain size of ($2\pi \times 2\pi \times 2\pi$). 
 We normalize the negative of the third-order longitudinal velocity structure function with $\epsilon l$ and plot this quantity versus $l$ in Figure \ref{Hydro}. The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Note that we can get more accurate results from higher-resolution simulations [@Verma:Pramana2013tarang]. 
-
-![For 3D homogeneous isotropic turbulence: plot of normalized third-order structure function vs. $l$. The normalized structure function is close to $4/5$ in the inertial range. \label{Hydro}](SF_hydro.png)
 
 The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.  
 
