@@ -78,7 +78,7 @@ $$\mathbf{u} =
 x \\ z
 \end{bmatrix}, \quad \theta = x+z.
 $$
-For the given fields, it can be analytically shown that the longitudinal and transverse velocity structure functions and the scalar structure functions are given by 
+For the given fields, it can be analytically shown that the longitudinal and the transverse velocity structure functions, and the scalar structure functions are given by 
 $$S_q^{u_\parallel} = (l_x^2 + l_z^2)^{q/2} = l^q,$$
 $$S_q^{u_\perp} = 0,$$
 $$S_q^\theta = (l_x+l_z)^q.$$
