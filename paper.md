@@ -20,12 +20,12 @@ authors:
   
 
 affiliations:
- - name: Department of Physics, Indian Institute of Technology - Kanpur
+ - name: Department of Physics, Indian Institute of Technology Kanpur, Kanpur 208016, India
    index: 1
- - name: Department of Mechanical Engineering, Indian Institute of Technology - Kanpur
+ - name: Department of Mechanical Engineering, Indian Institute of Technology Kanpur 208016, Kanpur, 
    index: 2
 
-date: 28 January 2020
+date: 31 January 2020
 
 bibliography: paper.bib
 
