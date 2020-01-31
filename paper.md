@@ -84,11 +84,11 @@ $$S_q^{u_\perp} = 0,$$
 $$S_q^\theta = (l_x+l_z)^q.$$
 We run ``Kolmogorov41`` to compute the velocity and scalar structure functions using the given fields of $32^2$ grid resolution with the domain size of $1 \times 1$.  In Figure \ref{SFTest}, we plot the second and the third-order longitudinal velocity structure functions versus $l$. Clearly, $S_2^{u_\parallel}(l)$ and $S_3^{u_\parallel}(l)$ equal $l^2$ and $l^3$ respectively, consistent with the analytically obtained values. Figure \ref{SFScalar} exhibits the density plots of the computed second-order scalar structure functions $S_2^{\theta}(\mathbf{l})$, along with $(l_x + l_z)^2$. The two plots are identical, thus showing that the scalar structure functions are computed correctly.
 
-![Plots of the longitudinal velocity structure functions of 2nd and 3rd orders vs. $l$ for Problem 1. The 2nd and 3rd order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png)
+![For Problem 1: plots of the longitudinal velocity structure functions of 2nd and 3rd orders vs. $l$. The 2nd and 3rd order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png)
 
 This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity and the scalar fields as per the given relation. After computing the structure functions, the code computes the percentage error between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
 
-![Left: Density plot of the second-order scalar structure functions as function of the displacement vector for Problem 1. Right: Density plot of $(l_x+l_z)^2$, which is the analytical value of the second order structure functions for the scalar field defined for Problem 1. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
+![For Problem 1: (a) Density plot of the second-order scalar structure functions as function of the displacement vector. (b) Density plot of $(l_x+l_z)^2$, which is the analytical value of the second order structure functions for the scalar field defined for Problem 1. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
 
 
 ### Problem 2
@@ -97,7 +97,7 @@ Here, we consider the classical problem of three-dimensional incompressible homo
 $$S_3^{u_\parallel}(l) = -\frac{4}{5} \epsilon l,$$
 where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure].
 
-![For 3D homogeneous isotropic turbulence: plot of normalized third-order structure function vs. $l$. The normalized structure function is close to $4/5$ in the inertial range. \label{Hydro}](SF_hydro.png)
+![For 3D homogeneous isotropic turbulence (Problem 2): plot of normalized third-order structure function vs. $l$. The normalized structure function is close to $4/5$ in the inertial range. \label{Hydro}](SF_hydro.png)
 
 Using ``Kolmogorov41``, we compute the longitudinal third-order velocity structure function using the simulation data of three-dimensional homogeneous isotropic turbulence with Reynolds number (Re) of 5700 [@Sadhukhan:PRF2019]. The simulation was performed using TARANG [@Chatterjee:JPDC2018] on a $512^3$ grid with the domain size of ($2\pi \times 2\pi \times 2\pi$). 
 We normalize the negative of the third-order longitudinal velocity structure function with $\epsilon l$ and plot this quantity versus $l$ in Figure \ref{Hydro}. The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Note that we can get more accurate results from higher-resolution simulations [@Verma:Pramana2013tarang]. 
