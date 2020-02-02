@@ -60,7 +60,7 @@ In the next section, we provide a brief description of the design of the code.
 
 Additionally, as per the choice of the user, `Kolmogorov41` can also compute and store the structure functions as functions of the displacement vector $\mathbf{l}$. This form is useful for anisotropic homogeneous turbulence such as rotating or stably-stratified flows.
 
-Using the definition of the longitudinal structure functions, it can be shown that $S_q^{u_\parallel}(\mathbf{l})= S_q^{u_\parallel}(\mathbf{-l})$. If the user decides to compute only the longitudinal velocity structure functions, `Kolmogorov41` exploits the aforementioned property by not separately evaluating $S_q^{u_\parallel}(\mathbf{-l})$. This results in saving significant computational costs.
+Using the definition of the longitudinal structure functions, it can be shown that $S_q^{u_\parallel}(\mathbf{l})= S_q^{u_\parallel}(\mathbf{-l})$. If the user decides to compute only the longitudinal velocity structure functions, `Kolmogorov41` exploits the aforementioned property by not separately evaluating $S_q^{u_\parallel}(\mathbf{-l})$. This saves significant computational costs.
 
 We use a combination of MPI and OpenMP to parallelize our code.  The interval of the outermost "for" loop described earlier in this section is divided among MPI processors. Using OpenMP threads, we parallelize the second "for" loop. Note that the entire data is accessible to all the MPI processors, thereby eliminating the need of communication between the processsors. This hybrid parallelization allows us to use a maximum of $N_x \times p$ processors, where $N_x$ is the number of grid points along $x$ direction and $p$ is either the number of processors per computation node or the number of grid points along $y$ direction (or $z$ direction for 2D fields), whichever is less.  
 
@@ -78,24 +78,24 @@ $$\mathbf{u} =
 x \\ z
 \end{bmatrix}, \quad \theta = x+z.
 $$
-For the given fields, it can be analytically shown that the longitudinal and the transverse velocity structure functions, and the scalar structure functions are given by 
+For the given fields, it can be analytically shown that the longitudinal and the transverse velocity structure functions and the scalar structure functions are given by 
 $$S_q^{u_\parallel} = (l_x^2 + l_z^2)^{q/2} = l^q,$$
 $$S_q^{u_\perp} = 0,$$
 $$S_q^\theta = (l_x+l_z)^q.$$
-We run ``Kolmogorov41`` to compute the velocity and scalar structure functions using the given fields. The resolution of the fields and the domain size are $32^2$ and $1 \times 1$ respectively. We plot the second and the third-order longitudinal velocity structure functions versus $l$ in Fig. \ref{SFTest}. Clearly, $S_2^{u_\parallel}(l)$ and $S_3^{u_\parallel}(l)$ equal $l^2$ and $l^3$ respectively, consistent with the analytically obtained values. Figure \ref{SFScalar} exhibits the density plots of the computed second-order scalar structure function $S_2^{\theta}(\mathbf{l})$, along with $(l_x + l_z)^2$. The two plots are identical, thus showing that the scalar structure function is computed correctly.
+We run ``Kolmogorov41`` to compute the velocity and scalar structure functions using the given fields. The resolution of the fields and the domain size are $32^2$ and $1 \times 1$ respectively. We plot the second and the third-order longitudinal velocity structure functions versus $l$ in Fig. \ref{SFTest}. Clearly, $S_2^{u_\parallel}(l)$ and $S_3^{u_\parallel}(l)$ equal $l^2$ and $l^3$ respectively, consistent with the analytically obtained values. Figure \ref{SFScalar} exhibits the density plots of the computed second-order scalar structure function $S_2^{\theta}(\mathbf{l})$ along with $(l_x + l_z)^2$. The two plots are identical, thus showing that the scalar structure function is computed correctly.
 
-![For Problem 1: plots of the second and third-order longitudinal velocity structure functions vs. $l$. The second and third-order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png)
+![For the velocity field defined in Problem 1: plots of the second and third-order longitudinal structure functions vs. $l$. The second and third-order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png)
 
-This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity and the scalar fields as per the given relation. After computing the structure functions, the code computes the percentage error between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
+This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity and the scalar fields as per the given relation. After computing the structure functions, the code computes the percentage difference between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
 
-![For Problem 1: (a) Density plot of the second-order scalar structure function as function of the displacement vector. (b) Density plot of $(l_x+l_z)^2$, which is the analytical value of the second-order structure function for the scalar field defined for Problem 1. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
+![For the scalar field defined in Problem 1: (a) Density plot of the second-order scalar structure function as function of the displacement vector. (b) Density plot of $(l_x+l_z)^2$, which is the analytical value of the second-order scalar structure function. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
 
 
 ### Problem 2
 
 Here, we consider the classical problem of three-dimensional incompressible homogeneous isotropic turbulence. For such flows, we consider the inertial range, which comprises of scales lying between the large-scale forcing regime and the small-scale dissipation regime. In this range, the third-order longitudinal velocity structure function is given by
 $$S_3^{u_\parallel}(l) = -\frac{4}{5} \epsilon l,$$
-where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure]. In a general case, for any order $q$, @She:PRL1994 proposed that the longitudinal structure functions scale as $S_3^{u_\parallel}(l) \sim l^{\zeta_q}$, where the exponent $\zeta_q$ is given by 
+where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure]. For an arbitrary order $q$, @She:PRL1994 proposed that the longitudinal structure functions scale as $S_3^{u_\parallel}(l) \sim l^{\zeta_q}$, where the exponent $\zeta_q$ is given by 
 $$ \zeta_q = \frac{q}{9} + 2 \left ( 1 - \left ( \frac{2}{3} \right )^{q/3} \right ).$$ 
 
 
@@ -110,7 +110,7 @@ The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.
 
 # Conclusions
 
-This paper describes the design and the validations of ``Kolmogorov41``, a hybrid parallel C++ code that computes structure functions using velocity and scalar field data. We validate ``Kolmogorov41`` using two cases. In the first case, we compute the structure functions using hypothetical velocity and scalar fields and find them to be consistent with analytically obtained values. In the second case, we compute the velocity structure functions using the fields obtained from the simulations of three-dimensional homogeneous and isotropic turbulence, and show consistency with Kolmogorov's theory. We believe that ``Kolmogorov41`` will be useful to researchers in turbulence community for analysing the structure functions of complex turbulent flows.  
+This paper describes the design and the validations of ``Kolmogorov41``, a hybrid parallel C++ code that computes structure functions using velocity and scalar field data. We validate ``Kolmogorov41`` using two cases. In the first case, we compute the structure functions using hypothetical velocity and scalar fields, and find them to be consistent with analytically obtained values. In the second case, we compute the velocity structure functions using the fields obtained from the simulations of three-dimensional homogeneous and isotropic turbulence, and show consistency with Kolmogorov's theory. We believe that ``Kolmogorov41`` will be useful to researchers in turbulence community for analysing the structure functions of complex turbulent flows.  
 
 
 # Acknowledgements
