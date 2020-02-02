@@ -88,7 +88,7 @@ We run ``Kolmogorov41`` to compute the velocity and scalar structure functions u
 
 This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity and the scalar fields as per the given relation. After computing the structure functions, the code computes the percentage error between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
 
-![For Problem 1: (a) Density plot of the second-order scalar structure function as function of the displacement vector. (b) Density plot of $(l_x+l_z)^2$, which is the analytical value of the second order structure function for the scalar field defined for Problem 1. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
+![For Problem 1: (a) Density plot of the second-order scalar structure function as function of the displacement vector. (b) Density plot of $(l_x+l_z)^2$, which is the analytical value of the second-order structure function for the scalar field defined for Problem 1. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
 
 
 ### Problem 2
