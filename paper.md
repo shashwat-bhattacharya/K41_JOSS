@@ -82,13 +82,13 @@ For the given fields, it can be analytically shown that the longitudinal and the
 $$S_q^{u_\parallel} = (l_x^2 + l_z^2)^{q/2} = l^q,$$
 $$S_q^{u_\perp} = 0,$$
 $$S_q^\theta = (l_x+l_z)^q.$$
-We run ``Kolmogorov41`` to compute the velocity and scalar structure functions using the given fields. The resolution of the fields and the domain size are $32^2$ and $1 \times 1$ respectively. We plot the second and the third-order longitudinal velocity structure functions versus $l$ in Fig. \ref{SFTest}. Clearly, $S_2^{u_\parallel}(l)$ and $S_3^{u_\parallel}(l)$ equal $l^2$ and $l^3$ respectively, consistent with the analytically obtained values. Figure \ref{SFScalar} exhibits the density plots of the computed second-order scalar structure functions $S_2^{\theta}(\mathbf{l})$, along with $(l_x + l_z)^2$. The two plots are identical, thus showing that the scalar structure functions are computed correctly.
+We run ``Kolmogorov41`` to compute the velocity and scalar structure functions using the given fields. The resolution of the fields and the domain size are $32^2$ and $1 \times 1$ respectively. We plot the second and the third-order longitudinal velocity structure functions versus $l$ in Fig. \ref{SFTest}. Clearly, $S_2^{u_\parallel}(l)$ and $S_3^{u_\parallel}(l)$ equal $l^2$ and $l^3$ respectively, consistent with the analytically obtained values. Figure \ref{SFScalar} exhibits the density plots of the computed second-order scalar structure function $S_2^{\theta}(\mathbf{l})$, along with $(l_x + l_z)^2$. The two plots are identical, thus showing that the scalar structure function is computed correctly.
 
 ![For Problem 1: plots of the second and third-order longitudinal velocity structure functions vs. $l$. The second and third-order structure functions equal $l^2$ and $l^3$ respectively.\label{SFTest}](SF_test.png)
 
 This problem is used as a test case for the validation of the code. The user is required to set the "test_switch" in the parameters file (para.yaml) to "true". On doing so, the code generates the velocity and the scalar fields as per the given relation. After computing the structure functions, the code computes the percentage error between the theoretical and the computed values of the structure functions. If the error does not exceed $1\times 10^{-10}$, the code is deemed to be passed.
 
-![For Problem 1: (a) Density plot of the second-order scalar structure functions as function of the displacement vector. (b) Density plot of $(l_x+l_z)^2$, which is the analytical value of the second order structure functions for the scalar field defined for Problem 1. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
+![For Problem 1: (a) Density plot of the second-order scalar structure function as function of the displacement vector. (b) Density plot of $(l_x+l_z)^2$, which is the analytical value of the second order structure function for the scalar field defined for Problem 1. The two density plots match identically.\label{SFScalar}](SF_scalar.png)
 
 
 ### Problem 2
