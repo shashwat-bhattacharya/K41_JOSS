@@ -110,7 +110,7 @@ The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.
 
 # Conclusions
 
-This paper describes the design and the validations of ``Kolmogorov41``, a hybrid parallel C++ code that computes structure functions using velocity and scalar field data. We validate ``Kolmogorov41`` using two cases. In the first case, we compute the structure functions using hypothetical velocity and scalar fields and compared them with analytically obtained values. In the second case, we compute the velocity structure functions using the fields obtained from the simulations of three-dimensional homogeneous and isotropic turbulence, and showed consistency with Kolmogorov's theory. We believe that ``Kolmogorov41`` will be useful to researchers in turbulence community for analysing the structure functions of complex turbulent flows.  
+This paper describes the design and the validations of ``Kolmogorov41``, a hybrid parallel C++ code that computes structure functions using velocity and scalar field data. We validate ``Kolmogorov41`` using two cases. In the first case, we compute the structure functions using hypothetical velocity and scalar fields and find them to be consistent with analytically obtained values. In the second case, we compute the velocity structure functions using the fields obtained from the simulations of three-dimensional homogeneous and isotropic turbulence, and show consistency with Kolmogorov's theory. We believe that ``Kolmogorov41`` will be useful to researchers in turbulence community for analysing the structure functions of complex turbulent flows.  
 
 
 # Acknowledgements
