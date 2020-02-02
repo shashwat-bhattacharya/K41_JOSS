@@ -95,7 +95,7 @@ This problem is used as a test case for the validation of the code. The user is 
 
 Here, we consider the classical problem of three-dimensional incompressible homogeneous isotropic turbulence. For such flows, we consider the inertial range, which comprises of scales lying between the large-scale forcing regime and the small-scale dissipation regime. In this range, the third-order longitudinal velocity structure function is given by
 $$S_3^{u_\parallel}(l) = -\frac{4}{5} \epsilon l,$$
-where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure]. In a general case, for any order $q$, @She:PRL1993 proposed that the longitudinal structure functions scale as $S_3^{u_\parallel}(l) \sim l^{\zeta_q}$, where the exponent $\zeta_q$ is given by 
+where $\epsilon$ is the viscous dissipation rate [@Kolmogorov:Dissipation; @Kolmogorov:Structure]. In a general case, for any order $q$, @She:PRL1994 proposed that the longitudinal structure functions scale as $S_3^{u_\parallel}(l) \sim l^{\zeta_q}$, where the exponent $\zeta_q$ is given by 
 $$ \zeta_q = \frac{q}{9} + 2 \left ( 1 - \left ( \frac{2}{3} \right )^{q/3} \right ).$$ 
 
 
@@ -104,7 +104,7 @@ We compute the longitudinal velocity structure functions of orders 2 to 7 using 
 ![For 3D homogeneous isotropic turbulence (Problem 2): plot of the normalized third-order structure function vs. $l$. The normalized structure function is close to $4/5$ (dashed line) in the inertial range. \label{Hydro}](SF_hydro.png)
 
 We normalize the third, fifth, and seventh-order longitudinal velocity structure functions with $(\epsilon l)^{\zeta_q}$, where $\zeta_q$ is given by She-Leveque's relation. We plot the negative of these quantities versus $l$ in Figure \ref{Hydro}. 
-The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Moreover, the normalized fifth and seventh-order structure functions show a plateau for the same range of $l$, thus showing consistency with She-Leveque's model.
+The figure clearly shows that in the inertial range ($0.3<l<0.8$), the normalized third-order longitudinal velocity structure function is fairly close to $4/5$ (represented by dashed line), consistent with Kolmogorov's theory. Moreover, the normalized fifth and seventh-order structure functions show a plateau for the same range of $l$, thus showing consistency with She-Leveque's model. Note that we expect more accurate results for higher resolution simulations [@Verma:Pramana2013tarang].
 
 The results obtained from Problems 1 and 2 thus validate ``Kolmogorov41``.  
 
