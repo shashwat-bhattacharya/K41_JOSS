@@ -69,7 +69,7 @@ In the next section, we discuss the validation of our code.
 # Results
 
 We validate `Kolmogorov41` by using it to compute the structure functions for specific cases, and then comparing our results with those obtained analytically.
-We validate `Kolmogorov41` by comparing the numerical results with analytical results for idealized $\mathbf{u}$ and $\theta$ fields as well as with the predictions of @Kolmogorov:Dissipation; @Kolmogorov:Structure.
+We validate `Kolmogorov41` by comparing the numerical results with analytical results for idealized $\mathbf{u}$ and $\theta$ fields as well as with the predictions of K41 [@Kolmogorov:Dissipation; @Kolmogorov:Structure].
 
 ### Problem 1
 
